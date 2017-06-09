@@ -18,7 +18,8 @@
 					<header id="header">
 						<h1>Kostis Maninakis</h1>
 						<p>
-              <a href="https://www.quora.com/What-does-the-term-full-stack-programmer-mean"  target="_blank">Full Stack</a>&nbsp;&bull;&nbsp;
+              <a href="https://www.quora.com/What-does-the-term-full-stack-programmer-mean"
+                  target="_blank">Full Stack</a>&nbsp;&bull;&nbsp;
               <a href="https://en.wikipedia.org/wiki/MEAN_(software_bundle)" target="_blank">MEAN</a> &nbsp;&bull;&nbsp;
               <a href="http://ionicframework.com/" target="_blank">Cordova/Ionic</a> &nbsp;&bull;&nbsp;
               <a href="https://www.youtube.com/watch?v=rRm0NDo1CiY" target="_blank">Developer</a>
@@ -26,27 +27,32 @@
 						<nav>
 							<ul>
                 <li>
-                  <a title="Curriculum Vitae" href="https://stackoverflow.com/cv/maninak" target="_blank" class="icon fa-user">
+                  <a title="Curriculum Vitae" href="https://stackoverflow.com/cv/maninak" target="_blank"
+                      class="icon fa-user" onclick="gaEvent('Curriculum Vitae');">
                     <span class="label">Curriculum Vitae</span>
                   </a>
                 </li>
 								<li>
-                  <a title="Medium" href="https://medium.com/@maninak" target="_blank" class="icon fa-medium">
+                  <a title="Medium" href="https://medium.com/@maninak" target="_blank"
+                      class="icon fa-medium" onclick="gaEvent('Medium');">
                     <span class="label">Medium</span>
                   </a>
                 </li>
 								<li>
-                  <a title="Github" href="https://github.com/maninak" target="_blank" class="icon fa-github">
+                  <a title="Github" href="https://github.com/maninak" target="_blank"
+                      class="icon fa-github" onclick="gaEvent('Github');">
                     <span class="label">Github</span>
                   </a>
                 </li>
                 <li>
-                  <a title="Stack Overflow" href="https://stackoverflow.com/users/5015955/maninak" target="_blank" class="icon fa-stack-overflow">
+                  <a title="Stack Overflow" href="https://stackoverflow.com/users/5015955/maninak" target="_blank" 
+                      class="icon fa-stack-overflow"  onclick="gaEvent('Stack Overflow');">
                     <span class="label">Stack Overflow</span>
                   </a>
                 </li>
 								<li>
-                  <a title="Email" href="mailto:kmaninak@gmail.com?Subject=Sup brah!" target="_blank" class="icon fa-envelope-o">
+                  <a title="Email" href="mailto:kmaninak@gmail.com?Subject=Sup brah!" target="_blank"
+                      class="icon fa-envelope-o" onclick="gaEvent('Email');">
                     <span class="label">Email</span>
                   </a>
                 </li>
@@ -64,7 +70,23 @@
 
 			</div>
 		</div>
+    <script>
+      /* GOOGLE ANALYTICS */
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-70469459-6', 'auto');
+      ga('send', 'pageview');
+
+      function gaEvent(clickedItem){
+        ga('send', 'event', clickedItem, 'click');
+      }
+
+    </script>
 		<script>
+
       /* INITIALISATION */
 			window.onload = function() { document.body.className = ''; }
 			window.ontouchmove = function() { return false; }
