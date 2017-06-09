@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="I am a Software developer from Greece. I code, therefore I am.">
 		<link rel="stylesheet" href="./assets/css/main.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body class="loading">
 
@@ -71,7 +70,10 @@
 
 
       /* BG ANIMATION */
-
+      setInterval( function (){
+        updateGradient();
+      }, 50);
+      
       var colors = new Array(
         [89,   97, 100],
         [83,  120, 149],
@@ -90,9 +92,7 @@
       //transition speed
       var gradientSpeed = 0.01;
 
-      function updateGradient() {
-        if ( $ === undefined ) return;
-          
+      function updateGradient() {          
         var c0_0 = colors[colorIndices[0]];
         var c0_1 = colors[colorIndices[1]];
         var c1_0 = colors[colorIndices[2]];
@@ -109,9 +109,11 @@
         var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
         var color2 = "rgb("+r2+","+g2+","+b2+")";
 
-        $('.gradient')
-          .css({ background: "-webkit-gradient(linear, left top, right bottom, from("+color1+"), to("+color2+"))" })
-          .css({ background: "-moz-linear-gradient(90, "+color1+" 0%, "+color2+" 100%)" });
+        let gradientEl = document.getElementsByClassName("gradient")[0];
+        gradientEl.style.background = "transparent -moz-linear-gradient(0% 0% , " + color1+ " 0%, " 
+            + color2 + " 100%) repeat scroll 0% 0%";
+        gradientEl.style.background = "-webkit-gradient(linear, 0% 0%, 100% 100%, from(" + color1 + "), to(" 
+            + color2 + "))";
           
         step += gradientSpeed;
         if ( step >= 1 ){
@@ -125,8 +127,6 @@
           colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
         }
       }
-
-      setInterval(updateGradient, 50);
 		</script>
 	</body>
 </html>
