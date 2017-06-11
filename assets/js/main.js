@@ -59,11 +59,9 @@ function updateGradient() {
   var color2 = "rgb("+r2+","+g2+","+b2+")";
 
   let gradientEl = document.getElementsByClassName("gradient")[0];
-  gradientEl.style.background = "transparent -moz-linear-gradient(0% 0% , " + color1+ " 0%, " 
-      + color2 + " 100%) repeat scroll 0% 0%";
-  gradientEl.style.background = "-webkit-gradient(linear, 0% 0%, 100% 100%, from(" + color1 + "), to(" 
-      + color2 + "))";
     
+  gradientEl.style.background = "linear-gradient(-45deg, " + color1 + " , " + color2 + ")";
+
   step += gradientSpeed;
   if ( step >= 1 ){
     step %= 1;
