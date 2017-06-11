@@ -26,8 +26,10 @@ setInterval( function (){
 let colors = new Array(
   [89,   97, 100],
   [83,  120, 149],
-  [22,  160, 130],
-  [255, 154,  68]
+  [255, 154,  68],
+  [145, 199, 177],
+  [60,   21,  24],
+  [12,    9,  13]
 );
 
 let step = 0;
@@ -59,7 +61,7 @@ function updateGradient() {
   let color2 = "rgb("+r2+","+g2+","+b2+")";
 
   let gradientEl = document.getElementsByClassName("gradient")[0];
-    
+
   gradientEl.style.background = "linear-gradient(-45deg, " + color1 + " , " + color2 + ")";
 
   step += gradientSpeed;
