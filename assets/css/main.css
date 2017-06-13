@@ -503,8 +503,8 @@
 					transition: all 0.2s ease-in-out;
 					border-radius: 100%;
 					border: solid 1px #fff;
-          filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
           -webkit-filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
+          filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
 					display: block;
 					font-size: 1.75em;
 					height: 2.5em;
@@ -517,6 +517,8 @@
 
 				#header nav a:hover {
 					font-size: 1.1em;
+          -webkit-filter: drop-shadow(0em 2em 0.35em rgba(2, 2, 2, 0.1));
+          filter: drop-shadow(0em 2em 0.35em rgba(2, 2, 2, 0.1));
 				}
 
 					#header nav a:hover:before {
