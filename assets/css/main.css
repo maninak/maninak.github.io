@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,500,900");
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,900");
 @import url("font-awesome.min.css");
 
 /* Reset */
@@ -87,6 +87,11 @@
 		a:hover {
 			border-color: inherit;
 		}
+
+/* General */
+.soft-shadow {
+    text-shadow: rgba(2,2,2,0.1) 0em 0.05em 0.075em;
+}
 
 /* BG */
 .gradient {
@@ -368,7 +373,7 @@
 		}
     
     #header h2 {
-			font-size: 1.25em;
+			font-size: 1.15em;
 			font-weight: 300;
       font-style: italic;
 			letter-spacing: 0.035em;
@@ -382,10 +387,10 @@
 		}
 
     #traits {
-			font-size: 1.35em;
+			font-size: 1.35em !important;
       text-align: center !important;
-      font-weight: 500 !important;
 			margin: 1.75em 0 0.25em 0 !important;
+      opacity: 1 !important;
     }
 
 		#header nav {
@@ -498,6 +503,8 @@
 					transition: all 0.2s ease-in-out;
 					border-radius: 100%;
 					border: solid 1px #fff;
+          filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
+          -webkit-filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
 					display: block;
 					font-size: 1.75em;
 					height: 2.5em;
@@ -597,7 +604,7 @@
 		}
 
     #traits {
-      font-size: 1.35em;
+      font-size: 1.35em !important;
     }
 
 		#header nav {
