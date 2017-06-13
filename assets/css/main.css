@@ -63,7 +63,6 @@
 
 	body {
 		background: #fff;
-    overflow-y: auto;
 	}
 
 		body.loading * {
@@ -179,6 +178,8 @@
 		text-align: center;
 		top: 0;
 		width: 100%;
+    overflow-y: auto;
+
 	}
 
 		#main:before {
@@ -352,12 +353,11 @@
 		cursor: default;
 		display: inline-block;
 		opacity: 0;
-		position: relative;
 		text-align: center;
-		top: -1em;
 		vertical-align: middle;
-		width: 80%;
+		width: 85%;
     max-width: 768px;
+    margin: 2em 0;
 	}
 
 		#header h1 {
@@ -377,7 +377,7 @@
 		#header p {
 			font-size: 1.2em;
       text-align: justify;
-			margin: 0.75em 0 0.25em 0;
+			margin: 1.75em 0 0.25em 0;
 			opacity: 0.75;
 		}
 

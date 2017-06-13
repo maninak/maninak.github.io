@@ -64,7 +64,7 @@ function updateGradient() {
 
   let gradientEl = document.getElementsByClassName("gradient")[0];
 
-  gradientEl.style.background = "linear-gradient(-45deg, " + color1 + " , " + color2 + ")";
+  gradientEl.style.background = "linear-gradient(-45deg, " + color1 + " , " + color2 + ") scroll";
 
   step += gradientSpeed;
   if ( step >= 1 ){
