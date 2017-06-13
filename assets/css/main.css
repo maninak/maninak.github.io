@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,900");
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,500,900");
 @import url("font-awesome.min.css");
 
 /* Reset */
@@ -63,7 +63,7 @@
 
 	body {
 		background: #fff;
-		overflow: hidden;
+    overflow-y: auto;
 	}
 
 		body.loading * {
@@ -356,7 +356,8 @@
 		text-align: center;
 		top: -1em;
 		vertical-align: middle;
-		width: 90%;
+		width: 80%;
+    max-width: 768px;
 	}
 
 		#header h1 {
@@ -365,12 +366,27 @@
 			letter-spacing: -0.035em;
 			line-height: 1em;
 		}
+    
+    #header h2 {
+			font-size: 1.25em;
+			font-weight: 300;
+      font-style: italic;
+			letter-spacing: 0.035em;
+		}
 
 		#header p {
-			font-size: 1.25em;
+			font-size: 1.2em;
+      text-align: justify;
 			margin: 0.75em 0 0.25em 0;
 			opacity: 0.75;
 		}
+
+    #traits {
+			font-size: 1.35em;
+      text-align: center !important;
+      font-weight: 500 !important;
+			margin: 1.75em 0 0.25em 0 !important;
+    }
 
 		#header nav {
 			margin: 1.5em 0 0 0;
@@ -526,7 +542,7 @@
 		position: absolute;
 		text-align: center;
 		width: 100%;
-		color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
 	}
 
 /* Wide */
@@ -548,6 +564,7 @@
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+  }
 
 /* Mobile */
 
@@ -569,9 +586,18 @@
 			font-size: 2.5em;
 		}
 
-		#header p {
+		#header h2 {
 			font-size: 1em;
 		}
+
+		#header p {
+			font-size: 1.15em;
+      line-height: 1.4em;
+		}
+
+    #traits {
+      font-size: 1.35em;
+    }
 
 		#header nav {
 			font-size: 1em;
@@ -593,4 +619,6 @@
 
 		#header nav {
 			padding: 0 1em;
-		} }
+		}
+  }
+}
