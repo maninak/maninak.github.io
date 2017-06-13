@@ -12,10 +12,12 @@ function gaEvent(clickedItem){
 }
 
 
+
 /* INITIALIZATION */
 window.onload = function() { document.body.className = ''; }
 window.ontouchmove = function() { return false; }
 window.onorientationchange = function() { document.body.scrollTop = 0; }
+
 
 
 /* BG ANIMATION */
@@ -43,7 +45,6 @@ let colorIndices = [4,5,3,0];
 
 //transition speed
 let gradientSpeed = 0.0075;
-
 
 function updateGradient() {          
   let c0_0 = colors[colorIndices[0]];
@@ -88,4 +89,24 @@ function pickColor(colors, colorIndicesToAvoid){
   } while (newColorIndex in colorIndicesToAvoid); // don't pick a color we're told to avoid
 
   return newColorIndex;
+}
+
+
+
+/* About */
+
+function toggleAboutContent() {
+  let contentClass = document.getElementById('about-content').className;
+
+  if (contentClass === 'displayed'){
+    document.getElementById('about-content').className = 'not-displayed';
+    document.getElementById('about-icon').className = '';
+  }
+  else if (contentClass === 'not-displayed') {
+    document.getElementById('about-content').className = 'displayed';
+    document.getElementById('about-icon').className = 'rotated90';
+  }
+  else {
+    console.error('No man\'s land!');
+  }
 }

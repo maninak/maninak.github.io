@@ -93,6 +93,18 @@
     text-shadow: rgba(2,2,2,0.1) 0em 0.05em 0.075em;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.not-displayed {
+  display: none;
+}
+
+.displayed {
+  display: block;
+}
+
 /* BG */
 .gradient {
   will-change: background;
@@ -371,19 +383,12 @@
 			letter-spacing: -0.035em;
 			line-height: 1em;
 		}
-    
-    #header h2 {
-			font-size: 1.15em;
-			font-weight: 300;
-      font-style: italic;
-			letter-spacing: 0.035em;
-		}
 
 		#header p {
 			font-size: 1.2em;
       text-align: justify;
-			margin: 1.75em 0 0.25em 0;
-			opacity: 0.75;
+			margin: 0.75em 0 0.25em 0;
+			opacity: 0.85;
 		}
 
     #traits {
@@ -393,8 +398,40 @@
       opacity: 1 !important;
     }
 
+    #about-label {
+      font-size: 0.8em;
+      margin-right: 0.2em;
+    }
+
+    #about-icon {
+      font-weight: bold;
+      font-size: 1.2em;
+      display: inline-block;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #about:hover #about-icon {
+      transform: rotate(45deg);
+    }
+
+    #about-content {
+			margin: 1.75em 0 0.25em 0;
+    }
+
+    .rotated90 {
+      transform: rotate(90deg) !important;
+    }
+
+    #about-content h2 {
+			font-size: 1.35em;
+      font-style: italic;
+			letter-spacing: 0.035em;
+      text-align: center;
+		}
+
 		#header nav {
-			margin: 1.5em 0 0 0;
+			margin: 3em 0 0 0;
 		}
 
 			#header nav li {
