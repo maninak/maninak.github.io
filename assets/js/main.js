@@ -41,7 +41,7 @@ let step = 0;
 let colorIndices = [0,3,2,1];
 
 //transition speed
-let gradientSpeed = 0.01;
+let gradientSpeed = 0.0075;
 
 
 function updateGradient() {          
