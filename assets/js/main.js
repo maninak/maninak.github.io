@@ -43,6 +43,7 @@ let colorIndices = [0,3,2,1];
 //transition speed
 let gradientSpeed = 0.01;
 
+
 function updateGradient() {          
   let c0_0 = colors[colorIndices[0]];
   let c0_1 = colors[colorIndices[1]];
@@ -67,12 +68,23 @@ function updateGradient() {
   step += gradientSpeed;
   if ( step >= 1 ){
     step %= 1;
+
     colorIndices[0] = colorIndices[1];
     colorIndices[2] = colorIndices[3];
-    
-    //pick two new target color indices
-    //do not pick the same as the current one
-    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+
+    colorIndices[1] = pickColor(colors, [colorIndices[1]]);
+    colorIndices[3] = pickColor(colors, [colorIndices[1], colorIndices[3]]);
   }
+}
+
+//pick two new target color indices
+//do not pick the same as the current one
+function pickColor(colors, colorIndicesToAvoid){
+  let newColorIndex;
+  
+  do {
+    newColorIndex = (Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+  } while (newColorIndex in colorIndicesToAvoid); // don't pick a color we're told to avoid
+
+  return newColorIndex;
 }
