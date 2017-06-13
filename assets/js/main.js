@@ -27,9 +27,10 @@ let colors = new Array(
   [89,   97, 100],
   [83,  120, 149],
   [255, 154,  68],
-  [145, 199, 177],
+  [106, 145, 129],
   [60,   21,  24],
-  [12,    9,  13]
+  [211, 97,   53],
+  [151, 153,  19]
 );
 
 let step = 0;
@@ -38,10 +39,11 @@ let step = 0;
 // next color left
 // current color right
 // next color right
-let colorIndices = [0,3,2,1];
+let colorIndices = [4,5,3,0];
 
 //transition speed
-let gradientSpeed = 0.01;
+let gradientSpeed = 0.0075;
+
 
 function updateGradient() {          
   let c0_0 = colors[colorIndices[0]];
@@ -67,12 +69,23 @@ function updateGradient() {
   step += gradientSpeed;
   if ( step >= 1 ){
     step %= 1;
+
     colorIndices[0] = colorIndices[1];
     colorIndices[2] = colorIndices[3];
-    
-    //pick two new target color indices
-    //do not pick the same as the current one
-    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+
+    colorIndices[1] = pickColor(colors, [colorIndices[1], colorIndices[3]]);
+    colorIndices[3] = pickColor(colors, [colorIndices[1], colorIndices[3]]);
   }
+}
+
+//pick two new target color indices
+//do not pick the same as the current one
+function pickColor(colors, colorIndicesToAvoid){
+  let newColorIndex;
+  
+  do {
+    newColorIndex = (Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+  } while (newColorIndex in colorIndicesToAvoid); // don't pick a color we're told to avoid
+
+  return newColorIndex;
 }
