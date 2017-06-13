@@ -541,8 +541,9 @@
 		line-height: 8em;
 		position: absolute;
 		text-align: center;
+    font-size: 0.8em;
 		width: 100%;
-    opacity: 0.5;
+    opacity: 0.4;
 	}
 
 /* Wide */
@@ -609,7 +610,11 @@
 
 			#header nav a:active {
 				font-size: 1em;
-			} }
+			}
+    #footer {
+      bottom: auto;
+    }
+  }
 
 /* Mobile (Portrait) */
 
