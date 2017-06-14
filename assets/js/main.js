@@ -111,4 +111,7 @@ function toggleAbout(event) {
       detailEl.removeAttribute('open');
     }, 1000);
   }
+  else {
+    gaEvent('about Kostis');
+  }
 }
