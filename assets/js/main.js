@@ -90,23 +90,3 @@ function pickColor(colors, colorIndicesToAvoid){
 
   return newColorIndex;
 }
-
-
-
-/* About */
-
-function toggleAboutContent() {
-  let contentClass = document.getElementById('about-content').className;
-
-  if (contentClass === 'displayed'){
-    document.getElementById('about-content').className = 'not-displayed';
-    document.getElementById('about-icon').className = '';
-  }
-  else if (contentClass === 'not-displayed') {
-    document.getElementById('about-content').className = 'displayed';
-    document.getElementById('about-icon').className = 'rotated90';
-  }
-  else {
-    console.error('No man\'s land!');
-  }
-}

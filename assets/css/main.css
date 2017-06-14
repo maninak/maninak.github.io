@@ -374,7 +374,7 @@
 		vertical-align: middle;
 		width: 85%;
     max-width: 768px;
-    margin: 2em 0;
+    margin-top: 2em;
 	}
 
 		#header h1 {
@@ -398,32 +398,35 @@
       opacity: 1 !important;
     }
 
-    #about-label {
+    #about summary{
       font-size: 0.8em;
-      margin-right: 0.2em;
+      outline: none;
+      display: block;
     }
 
-    #about-icon {
-      font-weight: bold;
-      font-size: 1.2em;
+    #about summary::-webkit-details-marker {
+      display: none;
+    }
+
+
+    #about summary::before {
+      content: '\25BC';
+      padding-right: 0.75em;
       display: inline-block;
+      transform: rotate(-90deg);
+      transition: transform 0.2s ease-in-out;  
+      transform-origin: 0.5em;
+    }
+
+    #about[open] > summary::before {
       transform: rotate(0deg);
-      transition: transform 0.2s ease-in-out;
     }
 
-    #about:hover #about-icon {
-      transform: rotate(45deg);
-    }
-
-    #about-content {
+    #about div {
 			margin: 1.75em 0 0.25em 0;
     }
 
-    .rotated90 {
-      transform: rotate(90deg) !important;
-    }
-
-    #about-content h2 {
+    #about h2 {
 			font-size: 1.35em;
       font-style: italic;
 			letter-spacing: 0.035em;
@@ -627,36 +630,37 @@
 				font-size: 11pt;
 			}
 
-	/* Header */
+    /* Header */
 
-		#header h1 {
-			font-size: 2.5em;
-		}
+      #header h1 {
+        font-size: 2.5em;
+      }
 
-		#header h2 {
-			font-size: 1em;
-		}
+      #header h2 {
+        font-size: 1em;
+      }
 
-		#header p {
-			font-size: 1.15em;
-      line-height: 1.4em;
-		}
+      #header p {
+        font-size: 1.15em;
+        line-height: 1.4em;
+      }
 
-    #traits {
-      font-size: 1.35em !important;
-    }
+      #traits {
+        font-size: 1.35em !important;
+      }
 
-		#header nav {
-			font-size: 1em;
-		}
+      #header nav {
+        font-size: 1em;
+      }
 
-			#header nav a:hover {
-				font-size: 1em;
-			}
+        #header nav a:hover {
+          font-size: 1em;
+        }
 
-			#header nav a:active {
-				font-size: 1em;
-			}
+        #header nav a:active {
+          font-size: 1em;
+        }
+
     #footer {
       bottom: auto;
     }
