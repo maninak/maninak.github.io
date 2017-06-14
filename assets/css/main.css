@@ -400,6 +400,7 @@
 
     #about summary{
       font-size: 0.8em;
+      letter-spacing: 0em;
       outline: none;
       display: block;
     }
@@ -416,10 +417,13 @@
       transform: rotate(-90deg);
       transition: transform 0.2s ease-in-out;  
       transform-origin: 0.5em;
+      position: relative;
+      top: -0.05em;
     }
 
     #about[open] > div {
       animation: fadeDownIn 1s ease-in-out;
+      will-change: opacity, tranform, height;
     }
     
     @keyframes fadeDownIn {
@@ -484,6 +488,7 @@
 				-webkit-animation: nav-icons 0.5s ease-in-out forwards;
 				-ms-animation: nav-icons 0.5s ease-in-out forwards;
 				animation: nav-icons 0.5s ease-in-out forwards;
+        will-change: transform, opacity;
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
