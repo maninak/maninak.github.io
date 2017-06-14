@@ -91,8 +91,12 @@ function pickColor(colors, colorIndicesToAvoid){
   return newColorIndex;
 }
 
+
+
+/* ABOUT */
+
 function toggleAbout(event) {
-  var summaryEl = event.srcElement;
+  var summaryEl = event.currentTarget;
   var detailEl = summaryEl.parentNode
   var divEl = summaryEl.parentNode.children[1];
 
