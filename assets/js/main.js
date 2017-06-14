@@ -32,7 +32,9 @@ let colors = new Array(
   [106, 145, 129],
   [60,   21,  24],
   [173,  43,  43],
-  [151, 153,  19]
+  [151, 153,  19],
+  [88,  140,  57],
+  [49,  135, 118]
 );
 
 let step = 0;
@@ -41,7 +43,7 @@ let step = 0;
 // next color left
 // current color right
 // next color right
-let colorIndices = [4,5,3,0];
+let colorIndices = [8, 7, 6, 2];
 
 //transition speed
 let gradientSpeed = 0.0075;
