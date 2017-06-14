@@ -400,6 +400,7 @@
 
     #about summary{
       font-size: 0.8em;
+      letter-spacing: 0em;
       outline: none;
       display: block;
     }
@@ -416,6 +417,8 @@
       transform: rotate(-90deg);
       transition: transform 0.2s ease-in-out;  
       transform-origin: 0.5em;
+      position: relative;
+      top: -0.05em;
     }
 
     #about[open] > div {
