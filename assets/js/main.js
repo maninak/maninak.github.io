@@ -12,10 +12,12 @@ function gaEvent(clickedItem){
 }
 
 
+
 /* INITIALIZATION */
 window.onload = function() { document.body.className = ''; }
 window.ontouchmove = function() { return false; }
 window.onorientationchange = function() { document.body.scrollTop = 0; }
+
 
 
 /* BG ANIMATION */
@@ -26,10 +28,10 @@ setInterval( function (){
 let colors = new Array(
   [89,   97, 100],
   [83,  120, 149],
-  [255, 154,  68],
+  [232, 140,  62],
   [106, 145, 129],
   [60,   21,  24],
-  [211, 97,   53],
+  [173,  43,  43],
   [151, 153,  19]
 );
 
@@ -43,7 +45,6 @@ let colorIndices = [4,5,3,0];
 
 //transition speed
 let gradientSpeed = 0.0075;
-
 
 function updateGradient() {          
   let c0_0 = colors[colorIndices[0]];
@@ -64,7 +65,7 @@ function updateGradient() {
 
   let gradientEl = document.getElementsByClassName("gradient")[0];
 
-  gradientEl.style.background = "linear-gradient(-45deg, " + color1 + " , " + color2 + ")";
+  gradientEl.style.background = "linear-gradient(-45deg, " + color1 + " , " + color2 + ") scroll";
 
   step += gradientSpeed;
   if ( step >= 1 ){
@@ -88,4 +89,20 @@ function pickColor(colors, colorIndicesToAvoid){
   } while (newColorIndex in colorIndicesToAvoid); // don't pick a color we're told to avoid
 
   return newColorIndex;
+}
+
+function toggleAbout(event) {
+  var summaryEl = event.srcElement;
+  var detailEl = summaryEl.parentNode
+  var divEl = summaryEl.parentNode.children[1];
+
+  if (detailEl.attributes.length == 2) {
+    event.preventDefault();
+    divEl.className = 'fadeUpOut';
+    
+    setTimeout(function() {
+      divEl.removeAttribute('class');
+      detailEl.removeAttribute('open');
+    }, 1000);
+  }
 }

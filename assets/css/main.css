@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,900");
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,300i,900");
 @import url("font-awesome.min.css");
 
 /* Reset */
@@ -63,7 +63,6 @@
 
 	body {
 		background: #fff;
-		overflow: hidden;
 	}
 
 		body.loading * {
@@ -88,6 +87,23 @@
 		a:hover {
 			border-color: inherit;
 		}
+
+/* General */
+.soft-shadow {
+    text-shadow: rgba(2,2,2,0.1) 0em 0.05em 0.075em;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.not-displayed {
+  display: none;
+}
+
+.displayed {
+  display: block;
+}
 
 /* BG */
 .gradient {
@@ -179,6 +195,8 @@
 		text-align: center;
 		top: 0;
 		width: 100%;
+    overflow-y: auto;
+
 	}
 
 		#main:before {
@@ -352,11 +370,11 @@
 		cursor: default;
 		display: inline-block;
 		opacity: 0;
-		position: relative;
 		text-align: center;
-		top: -1em;
 		vertical-align: middle;
-		width: 90%;
+		width: 85%;
+    max-width: 768px;
+    margin-top: 2em;
 	}
 
 		#header h1 {
@@ -367,13 +385,98 @@
 		}
 
 		#header p {
-			font-size: 1.25em;
+			font-size: 1.2em;
+      text-align: justify;
 			margin: 0.75em 0 0.25em 0;
-			opacity: 0.75;
+			opacity: 0.85;
+		}
+
+    #traits {
+			font-size: 1.35em !important;
+      text-align: center !important;
+			margin: 1.75em 0 0.25em 0 !important;
+      opacity: 1 !important;
+    }
+
+    #about summary{
+      font-size: 0.8em;
+      outline: none;
+      display: block;
+    }
+
+    #about summary::-webkit-details-marker {
+      display: none;
+    }
+
+
+    #about summary::before {
+      content: '\25BC';
+      padding-right: 0.75em;
+      display: inline-block;
+      transform: rotate(-90deg);
+      transition: transform 0.2s ease-in-out;  
+      transform-origin: 0.5em;
+    }
+
+    #about[open] > div {
+      animation: fadeDownIn 1s ease-in-out;
+    }
+    
+    @keyframes fadeDownIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-6em);
+        height: 0em;
+      }
+      20% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        height: 12.8em;
+      }
+    }
+
+    /* workaround because targeting #about:not([open]) cannot work as a solution */
+    .fadeUpOut {
+      animation: fadeUpOut 1s ease-in-out !important;
+    }
+        
+    @keyframes fadeUpOut {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+        height: 12.8em;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-6em);
+        height: 0em;
+      }
+    }
+
+    #about[open] > summary::before {
+      transform: rotate(0deg);
+    }
+
+    #about > div {
+			margin: 1.75em 0 0.25em 0;
+      position: relative;
+    }
+
+    #about > div > h2 {
+			font-size: 1.35em;
+      font-style: italic;
+			letter-spacing: 0.035em;
+      text-align: center;
 		}
 
 		#header nav {
-			margin: 1.5em 0 0 0;
+			margin: 3em 0 0 0;
 		}
 
 			#header nav li {
@@ -482,6 +585,8 @@
 					transition: all 0.2s ease-in-out;
 					border-radius: 100%;
 					border: solid 1px #fff;
+          -webkit-filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
+          filter: drop-shadow(0em 0.1em 0.05em rgba(2, 2, 2, 0.1));
 					display: block;
 					font-size: 1.75em;
 					height: 2.5em;
@@ -494,6 +599,8 @@
 
 				#header nav a:hover {
 					font-size: 1.1em;
+          -webkit-filter: drop-shadow(0em 2em 0.35em rgba(2, 2, 2, 0.1));
+          filter: drop-shadow(0em 2em 0.35em rgba(2, 2, 2, 0.1));
 				}
 
 					#header nav a:hover:before {
@@ -525,8 +632,9 @@
 		line-height: 8em;
 		position: absolute;
 		text-align: center;
+    font-size: 0.8em;
 		width: 100%;
-		color: rgba(255, 255, 255, 0.5);
+    opacity: 0.4;
 	}
 
 /* Wide */
@@ -548,6 +656,7 @@
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+  }
 
 /* Mobile */
 
@@ -563,27 +672,37 @@
 				font-size: 11pt;
 			}
 
-	/* Header */
+    /* Header */
 
-		#header h1 {
-			font-size: 2.5em;
-		}
+      #header h1 {
+        font-size: 2.5em;
+      }
 
-		#header p {
-			font-size: 1em;
-		}
+      #header p {
+        font-size: 1.15em;
+        line-height: 1.4em;
+      }
 
-		#header nav {
-			font-size: 1em;
-		}
+      #traits {
+        font-size: 1.35em !important;
+      }
 
-			#header nav a:hover {
-				font-size: 1em;
-			}
+      #header nav {
+        font-size: 1em;
+      }
 
-			#header nav a:active {
-				font-size: 1em;
-			} }
+        #header nav a:hover {
+          font-size: 1em;
+        }
+
+        #header nav a:active {
+          font-size: 1em;
+        }
+
+    #footer {
+      bottom: auto;
+    }
+  }
 
 /* Mobile (Portrait) */
 
@@ -593,4 +712,6 @@
 
 		#header nav {
 			padding: 0 1em;
-		} }
+		}
+  }
+}

@@ -16,17 +16,35 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Kostis Maninakis</h1>
-						<p>
+						
+            <h1 class="soft-shadow">Kostis Maninakis</h1>
+						
+            <p id="traits" class="soft-shadow">
               <a href="https://www.quora.com/What-does-the-term-full-stack-programmer-mean"
                   target="_blank">Full Stack</a>&nbsp;&bull;&nbsp;
               <a href="https://en.wikipedia.org/wiki/MEAN_(software_bundle)" target="_blank">MEAN</a> &nbsp;&bull;&nbsp;
               <a href="http://ionicframework.com/" target="_blank">Cordova/Ionic</a> &nbsp;&bull;&nbsp;
-              <a href="https://www.youtube.com/watch?v=rRm0NDo1CiY" target="_blank">Developer</a>
+              <a href="https://www.youtube.com/watch?v=rRm0NDo1CiY" target="_blank">Software Developer</a>
             </p>
-						<nav>
-							<ul>
-               
+
+            <details id="about">
+              <summary onclick="toggleAbout(event);"> Who is Kostis? </summary>
+              <div>
+                <h2>Forever curious. Details matter.</h2>
+                <p>
+                  Kostis wakes up every day and stays up at nights learning new technologies and developing products users
+                  adore to use and programmers love to maintain. He's a strong believer that success lies in the
+                  details and loves balancing along the fine line between YAGNI and "do it right the first time" coding
+                  philosophies. He gets off with solutions smart enough to look dumb and intuitive user experiences that
+                  are pixel perfect. He's lucky to combine hard technical knowledge with softer business, marketing and
+                  design skills.
+                </p>
+              </div>
+            </details>
+						
+            <nav>
+							<ul class="soft-shadow">
+   
                 <li>
                   <a title="Curriculum Vitae" href="https://stackoverflow.com/story/maninak" target="_blank"
                       class="icon fa-file-text-o" onclick="gaEvent('Curriculum Vitae');">
@@ -67,14 +85,14 @@
 					</header>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<div id="footer">
 
 						<span class="copyright">&copy; Copyright Kostis Maninakis <span id="year"></span>, All Rights Reserved</span>
             <script type="text/javascript">
               document.getElementById("year").innerText = new Date().getFullYear();
             </script>
             <script type="text/javascript" src="./assets/js/main.js"></script>
-					</footer>
+					</div>
 
 			</div>
 		</div>
