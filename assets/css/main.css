@@ -418,15 +418,40 @@
       transform-origin: 0.5em;
     }
 
+    #about[open] > div {
+      animation: fade 1s ease-in-out;
+    }
+
+    /* workaround because targeting #about:not([open]) cannot work as a solution */
+    .fadeUpOut {
+      animation: fade 0.5s ease-in-out reverse;
+    }
+    
+    @keyframes fade {
+      0% {
+        opacity: 0;
+        transform: translateY(-1.25em);
+        height: 0em;
+      }
+      20% {
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        height: 12.8em;
+      }
+    }
+
+
     #about[open] > summary::before {
       transform: rotate(0deg);
     }
 
-    #about div {
+    #about > div {
 			margin: 1.75em 0 0.25em 0;
     }
 
-    #about h2 {
+    #about > div > h2 {
 			font-size: 1.35em;
       font-style: italic;
 			letter-spacing: 0.035em;
@@ -660,7 +685,7 @@
         #header nav a:active {
           font-size: 1em;
         }
-        
+
     #footer {
       bottom: auto;
     }
