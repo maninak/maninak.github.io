@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,900");
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,300i,900");
 @import url("font-awesome.min.css");
 
 /* Reset */
@@ -419,21 +419,17 @@
     }
 
     #about[open] > div {
-      animation: fade 1s ease-in-out;
-    }
-
-    /* workaround because targeting #about:not([open]) cannot work as a solution */
-    .fadeUpOut {
-      animation: fade 0.5s ease-in-out reverse;
+      animation: fadeDownIn 1s ease-in-out;
     }
     
-    @keyframes fade {
+    @keyframes fadeDownIn {
       0% {
         opacity: 0;
-        transform: translateY(-1.25em);
+        transform: translateY(-6em);
         height: 0em;
       }
       20% {
+        opacity: 0;
       }
       100% {
         opacity: 1;
@@ -442,6 +438,26 @@
       }
     }
 
+    /* workaround because targeting #about:not([open]) cannot work as a solution */
+    .fadeUpOut {
+      animation: fadeUpOut 1s ease-in-out !important;
+    }
+        
+    @keyframes fadeUpOut {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+        height: 12.8em;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-6em);
+        height: 0em;
+      }
+    }
 
     #about[open] > summary::before {
       transform: rotate(0deg);
@@ -449,6 +465,7 @@
 
     #about > div {
 			margin: 1.75em 0 0.25em 0;
+      position: relative;
     }
 
     #about > div > h2 {
@@ -659,10 +676,6 @@
 
       #header h1 {
         font-size: 2.5em;
-      }
-
-      #header h2 {
-        font-size: 1em;
       }
 
       #header p {

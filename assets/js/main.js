@@ -90,3 +90,19 @@ function pickColor(colors, colorIndicesToAvoid){
 
   return newColorIndex;
 }
+
+function toggleAbout(event) {
+  var summaryEl = event.srcElement;
+  var detailEl = summaryEl.parentNode
+  var divEl = summaryEl.parentNode.children[1];
+
+  if (detailEl.attributes.length == 2) {
+    event.preventDefault();
+    divEl.className = 'fadeUpOut';
+    
+    setTimeout(function() {
+      divEl.removeAttribute('class');
+      detailEl.removeAttribute('open');
+    }, 1000);
+  }
+}
