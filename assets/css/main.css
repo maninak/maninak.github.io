@@ -386,7 +386,6 @@
 
 		#header p {
 			font-size: 1.2em;
-      text-align: justify;
 			margin: 0.75em 0 0.25em 0;
 			opacity: 0.85;
 		}
@@ -429,7 +428,7 @@
     @keyframes fadeDownIn {
       0% {
         opacity: 0;
-        transform: translateY(-6em);
+        transform: translateY(-4em);
         height: 0em;
       }
       20% {
@@ -453,12 +452,12 @@
         transform: translateY(0);
         height: 12.8em;
       }
-      20% {
-        opacity: 1;
+      80% {
+        opacity: 0;
       }
       100% {
         opacity: 0;
-        transform: translateY(-6em);
+        transform: translateY(-4em);
         height: 0em;
       }
     }
@@ -686,6 +685,7 @@
       #header p {
         font-size: 1.15em;
         line-height: 1.4em;
+        text-align: justify;
       }
 
       #traits {
