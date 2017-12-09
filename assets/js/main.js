@@ -21,8 +21,8 @@ window.onorientationchange = function() { document.body.scrollTop = 0; }
 
 
 /* BG ANIMATION */
-setInterval( function (){
-  updateGradient();
+setInterval( function() {
+  requestAnimationFrame(updateGradient);
 }, 50);
 
 let colors = new Array(
