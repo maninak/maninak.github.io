@@ -21,8 +21,8 @@ window.onorientationchange = function() { document.body.scrollTop = 0; }
 
 
 /* BG ANIMATION */
-setInterval( function (){
-  updateGradient();
+setInterval( function() {
+  requestAnimationFrame(updateGradient);
 }, 50);
 
 let colors = new Array(
@@ -45,7 +45,7 @@ let step = 0;
 // next color right
 let colorIndices = [8, 7, 6, 2];
 
-//transition speed
+// transition speed
 let gradientSpeed = 0.0075;
 
 function updateGradient() {          
@@ -72,12 +72,15 @@ function updateGradient() {
   step += gradientSpeed;
   if ( step >= 1 ){
     step %= 1;
+ 
+    // mark currently used colors to be avoided
+    var colorIndicesToAvoid = [colorIndices[1], colorIndices[3]];
 
     colorIndices[0] = colorIndices[1];
     colorIndices[2] = colorIndices[3];
 
-    colorIndices[1] = pickColor(colors, [colorIndices[1], colorIndices[3]]);
-    colorIndices[3] = pickColor(colors, [colorIndices[1], colorIndices[3]]);
+    colorIndices[1] = pickColor(colors, colorIndicesToAvoid);
+    colorIndices[3] = pickColor(colors, colorIndicesToAvoid);
   }
 }
 
