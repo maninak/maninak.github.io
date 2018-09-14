@@ -23,7 +23,7 @@ window.onorientationchange = function() { document.body.scrollTop = 0; }
 /* BG ANIMATION */
 setInterval( function() {
   requestAnimationFrame(updateGradient);
-}, 50);
+}, 30);
 
 let colors = new Array(
   [89,   97, 100],
@@ -38,7 +38,7 @@ let colors = new Array(
 );
 
 let step = 0;
-//color table indices for: 
+// color table indices for:
 // current color left
 // next color left
 // current color right
@@ -48,7 +48,7 @@ let colorIndices = [8, 7, 6, 2];
 // transition speed
 let gradientSpeed = 0.0075;
 
-function updateGradient() {          
+function updateGradient() {
   let c0_0 = colors[colorIndices[0]];
   let c0_1 = colors[colorIndices[1]];
   let c1_0 = colors[colorIndices[2]];
@@ -72,7 +72,7 @@ function updateGradient() {
   step += gradientSpeed;
   if ( step >= 1 ){
     step %= 1;
- 
+
     // mark currently used colors to be avoided
     var colorIndicesToAvoid = [colorIndices[1], colorIndices[3]];
 
@@ -88,7 +88,7 @@ function updateGradient() {
 //do not pick the same as the current one
 function pickColor(colors, colorIndicesToAvoid){
   let newColorIndex;
-  
+
   do {
     newColorIndex = (Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
   } while (newColorIndex in colorIndicesToAvoid); // don't pick a color we're told to avoid
@@ -108,7 +108,7 @@ function toggleAbout(event) {
   if (detailEl.attributes.length == 2) {
     event.preventDefault();
     divEl.className = 'fadeUpOut';
-    
+
     setTimeout(function() {
       divEl.removeAttribute('class');
       detailEl.removeAttribute('open');
