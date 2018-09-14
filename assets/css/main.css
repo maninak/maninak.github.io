@@ -174,10 +174,10 @@
 
 	#wrapper {
     will-change: opacity;
-		-moz-animation: wrapper 3s forwards;
-		-webkit-animation: wrapper 3s forwards;
-		-ms-animation: wrapper 3s forwards;
-		animation: wrapper 3s forwards;
+		-moz-animation: wrapper 1.5s forwards;
+		-webkit-animation: wrapper 1.5s forwards;
+		-ms-animation: wrapper 1.5s forwards;
+		animation: wrapper 1.5s forwards;
 		height: 100%;
 		left: 0;
 		opacity: 0;
@@ -355,10 +355,10 @@
 	}
 
 	#header {
-		-moz-animation: header 1s 2.25s forwards;
-		-webkit-animation: header 1s 2.25s forwards;
-		-ms-animation: header 1s 2.25s forwards;
-		animation: header 1s 2.25s forwards;
+		-moz-animation: header 1s 1s forwards;
+		-webkit-animation: header 1s 1s forwards;
+		-ms-animation: header 1s 1s forwards;
+		animation: header 1s 1s forwards;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
@@ -414,7 +414,7 @@
       padding-right: 0.75em;
       display: inline-block;
       transform: rotate(-90deg);
-      transition: transform 0.2s ease-in-out;  
+      transition: transform 0.2s ease-in-out;
       transform-origin: 0.5em;
       position: relative;
       top: -0.05em;
@@ -424,7 +424,7 @@
       animation: fadeDownIn 1s ease-in-out;
       will-change: opacity, tranform, height;
     }
-    
+
     @keyframes fadeDownIn {
       0% {
         opacity: 0;
@@ -445,7 +445,7 @@
     .fadeUpOut {
       animation: fadeUpOut 1s ease-in-out !important;
     }
-        
+
     @keyframes fadeUpOut {
       0% {
         opacity: 1;
