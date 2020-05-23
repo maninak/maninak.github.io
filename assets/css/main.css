@@ -583,6 +583,12 @@
 					will-change: background-color;
 				}
 
+				#header nav a.cv:before {
+					content: 'CV';
+					font-family: 'Yantramanav', sans-serif;
+					font-weight: 900;
+				}
+
 				#header nav a:hover {
 					font-size: 1.1em;
           -webkit-filter: drop-shadow(0em 2em 0.35em rgba(2, 2, 2, 0.1));
