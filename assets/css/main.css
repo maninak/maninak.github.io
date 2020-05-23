@@ -668,12 +668,16 @@
 
       #header h1 {
         font-size: 2.5em;
+			}
+
+      #about > div > h2 {
+        text-align: left;
       }
 
       #header p {
         font-size: 1.15em;
         line-height: 1.4em;
-        text-align: justify;
+        text-align: left;
       }
 
       #traits {
