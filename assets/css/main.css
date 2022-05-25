@@ -259,9 +259,14 @@
       top: -0.05em;
     }
 
-		#about summary a {
+		#about summary .summary__content{
 			user-select: none;
-			pointer-events: none;
+			border-bottom: dotted 1px transparent;
+			transition: border-color 0.2s ease-in-out;
+    }
+
+		#about summary .summary__content:hover {
+			border-color: inherit;
     }
 
     #about[open] > div {
@@ -288,6 +293,7 @@
     /* workaround because targeting #about:not([open]) cannot work as a solution */
     .fadeUpOut {
       animation: fadeUpOut 1s ease-in-out !important;
+      will-change: opacity, tranform, height;
     }
 
     @keyframes fadeUpOut {
