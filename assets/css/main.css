@@ -61,16 +61,12 @@
 		line-height: 1.75em;
 	}
 
-	body {
-		background: #fff;
+	body.loading * {
+		-moz-animation: none !important;
+		-webkit-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
 	}
-
-		body.loading * {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-		}
 
 	a {
 		-moz-transition: border-color 0.2s ease-in-out;
@@ -571,4 +567,12 @@
 			padding: 0 1em;
 		}
   }
+}
+
+/* Dark-mode support */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		background: #333;
+	}
 }
