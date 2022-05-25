@@ -362,7 +362,7 @@
 			font-size: 1.2em;
 			margin: 0.75em 0 0.25em 0;
 			opacity: 0.85;
-			max-width: 70ch
+			max-width: 60ch;
 		}
 
     #traits {
@@ -371,6 +371,12 @@
 			margin: 1.75em 0 0.25em 0 !important;
       opacity: 1 !important;
     }
+
+		#about .details__content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 
     #about summary{
       font-size: 0.8em;
