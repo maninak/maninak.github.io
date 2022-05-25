@@ -572,7 +572,17 @@
 /* Dark-mode support */
 
 @media (prefers-color-scheme: dark) {
-	:root {
+	body {
 		background: #333;
+		color: #060606;
+	}
+
+	#header nav a:before {
+		border-color: #060606;
+	}
+
+	#header nav a:hover:before {
+		background-color: rgba(0, 0, 0, 0.1);
+		color: #060606;
 	}
 }
