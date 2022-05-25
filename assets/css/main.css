@@ -158,25 +158,21 @@
 		-webkit-animation: wrapper 1.5s forwards;
 		-ms-animation: wrapper 1.5s forwards;
 		animation: wrapper 1.5s forwards;
-		height: 100%;
+		min-height: 100%;
 		left: 0;
 		opacity: 0;
 		position: fixed;
 		top: 0;
 		width: 100%;
+		display: grid;
+		grid-template-rows: minmax(calc(100% - 80px), auto) min-content;
+		place-items: center;
 	}
 
 /* Main */
 
 	#main {
-		height: 100%;
-		left: 0;
-		position: fixed;
 		text-align: center;
-		top: 0;
-		width: 100%;
-    overflow-y: auto;
-
 	}
 
 		#main:before {
@@ -352,9 +348,7 @@
 		opacity: 0;
 		text-align: center;
 		vertical-align: middle;
-		width: 85%;
-    max-width: 768px;
-    margin-top: 2em;
+		margin: 0 40px
 	}
 
 		#header h1 {
@@ -368,6 +362,7 @@
 			font-size: 1.2em;
 			margin: 0.75em 0 0.25em 0;
 			opacity: 0.85;
+			max-width: 70ch
 		}
 
     #traits {
@@ -617,12 +612,8 @@
 /* Footer */
 
 	#footer {
-		bottom: 0;
 		cursor: default;
-		height: 6em;
-		left: 0;
-		line-height: 8em;
-		position: absolute;
+		padding: 2em 0;
 		text-align: center;
     font-size: 0.8em;
 		width: 100%;
@@ -695,10 +686,6 @@
         #header nav a:active {
           font-size: 1em;
         }
-
-    #footer {
-      bottom: auto;
-    }
   }
 
 /* Mobile (Portrait) */
