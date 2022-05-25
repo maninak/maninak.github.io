@@ -395,6 +395,11 @@
       top: -0.05em;
     }
 
+		#about summary a {
+			user-select: none;
+			pointer-events: none;
+    }
+
     #about[open] > div {
       animation: fadeDownIn 1s ease-in-out;
       will-change: opacity, tranform, height;
