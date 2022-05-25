@@ -23,9 +23,9 @@ window.onorientationchange = function() { document.body.scrollTop = 0; }
 /* BG ANIMATION */
 setInterval( function() {
   requestAnimationFrame(updateGradient);
-}, 30);
+}, 60);
 
-let colors = new Array(
+const colors = [
   [89,   97, 100],
   [83,  120, 149],
   [232, 140,  62],
@@ -35,7 +35,7 @@ let colors = new Array(
   [151, 153,  19],
   [88,  140,  57],
   [49,  135, 118]
-);
+];
 
 let step = 0;
 // color table indices for:
