@@ -480,13 +480,24 @@
 
 /* Footer */
 
+@keyframes footer-fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.4;
+	}
+}
+
 	#footer {
 		cursor: default;
 		padding: 2em 0;
 		text-align: center;
     font-size: 0.8em;
 		width: 100%;
-    opacity: 0.4;
+		opacity: 0;
+		animation: footer-fade-in 0.5s ease-in-out forwards;
+		animation-delay: 5s
 	}
 
 /* Wide */
@@ -582,7 +593,7 @@
 	}
 
 	#header nav a:hover:before {
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: rgba(0, 0, 0, 0.075);
 		color: #060606;
 	}
 }
