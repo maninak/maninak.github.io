@@ -1,3 +1,5 @@
+"use strict";
+
 /* GOOGLE ANALYTICS */
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -18,6 +20,17 @@ window.onload = function() { document.body.className = ''; }
 window.ontouchmove = function() { return false; }
 window.onorientationchange = function() { document.body.scrollTop = 0; }
 
+/* COLOR SCHEME */
+let prefersDark = false
+const darkSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+function setColorScheme(e) {
+  prefersDark = e.matches
+}
+
+setColorScheme(darkSchemeQuery)
+darkSchemeQuery.addEventListener('change', setColorScheme)
+
 
 
 /* BG ANIMATION */
@@ -25,30 +38,43 @@ setInterval( function() {
   requestAnimationFrame(updateGradient);
 }, 60);
 
-const colors = [
-  [89,   97, 100],
-  [83,  120, 149],
+const brightThemeColors = [
+  [ 49, 135, 118],
+  [ 83, 120, 149],
+  [151, 153,  19],
   [232, 140,  62],
   [106, 145, 129],
-  [60,   21,  24],
-  [173,  43,  43],
-  [151, 153,  19],
-  [88,  140,  57],
-  [49,  135, 118]
+  [ 89,  97, 100],
+  [ 88, 140,  57],
+  [ 60,  21,  24],
+  [ 67,  35, 113]
+];
+
+const darkThemeColors = [
+  [232, 140,  62],
+  [191,  15, 255],
+  [ 61, 139, 255],
+  [110, 238, 135],
+  [ 210,210, 210],
+  [ 83, 120, 149],
+  [203, 255,  73],
+  [255,  88,  88],
 ];
 
 let step = 0;
 // color table indices for:
-// current color left
-// next color left
 // current color right
 // next color right
-let colorIndices = [8, 7, 6, 2];
+// current color left
+// next color left
+let colorIndices = [0, 1, 2, 3];
 
 // transition speed
 let gradientSpeed = 0.0075;
 
 function updateGradient() {
+  const colors = prefersDark ? darkThemeColors : brightThemeColors;
+
   let c0_0 = colors[colorIndices[0]];
   let c0_1 = colors[colorIndices[1]];
   let c1_0 = colors[colorIndices[2]];
@@ -99,7 +125,6 @@ function pickColor(colors, colorIndicesToAvoid){
 
 
 /* ABOUT */
-
 function toggleAbout(event) {
   var summaryEl = event.currentTarget;
   var detailEl = summaryEl.parentNode
